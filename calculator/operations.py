@@ -1,7 +1,7 @@
 from decimal import Decimal
 
 
-# type hinting
+# type hinting for params and return value
 def add(a: Decimal, b: Decimal) -> Decimal:
     return a + b
 
