@@ -16,4 +16,10 @@ def test_multiplication():
 def test_division():
     '''Test division'''
     assert divide(2,2) == 1
-    
+
+def test_divide_by_zero():
+    '''Test division by zero'''
+    try:
+        divide(2,0)
+    except ZeroDivisionError as e:
+        assert str(e) == "Cannot divide by zero!"
