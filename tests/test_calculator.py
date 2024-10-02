@@ -35,7 +35,7 @@ def test_last_calculation():
     Calculations.clear_history()
     Calculator.add(Decimal(1), Decimal(2))
     last_calc = Calculations.last_calculation()
-    assert last_calc.result == Decimal(3)
+    assert last_calc.execute_calculation() == Decimal(3)
 
 def test_clear_history():
     Calculations.clear_history()
