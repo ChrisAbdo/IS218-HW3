@@ -15,9 +15,9 @@ from calculator.operations import add, subtract, multiply, divide
 ])
 def test_ops(num1, num2, op, exp):
     calc = Calculation(num1, num2, op) 
-    assert calc.perform() == exp, f"Failed {op.__name__} operation with {num1} and {num2}" 
+    assert calc.execute_calculation() == exp, f"Failed {op.__name__} operation with {num1} and {num2}" 
 
 def test_divide_by_zero():
     calc = Calculation(Decimal('10'), Decimal('0'), divide)
     with pytest.raises(ValueError, match="Cannot divide by zero"):  
-        calc.perform()  
+        calc.execute_calculation()  

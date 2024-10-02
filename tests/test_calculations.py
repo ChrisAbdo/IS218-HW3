@@ -1,25 +1,28 @@
-'''My Calculator Test'''
-from calculator.operations import add, multiply, subtract, divide
+from decimal import Decimal
+import pytest
+from calculator.calculation import Calculation
+from calculator.calculations import Calculations
+from calculator.operations import add, subtract
 
-def test_addition():
-    '''Test that addition function works '''    
-    assert add(2,2) == 4
+@pytest.fixture
+def calculations():
+    Calculations.clear_history()
+    Calculations.add_calculation(Calculation(Decimal('10'), Decimal('5'), add))
+    Calculations.add_calculation(Calculation(Decimal('20'), Decimal('3'), subtract))
 
-def test_subtraction():
-    '''Test that addition function works '''    
-    assert subtract(2,2) == 0
+def test_add_calculation():
+    calc = Calculation(Decimal('2'), Decimal('2'), add)
+    Calculations.add_calculation(calc)
+    assert Calculations.last_calculation() == calc, "Failed to add the calculation to the history"
 
-def test_multiplication():
-    '''Test that multiply works'''
-    assert multiply(2,2) == 4
+def test_history():
+    history = Calculations.history()
+    assert len(history) == 2, "History does not contain the expected number of calculations"
 
-def test_division():
-    '''Test division'''
-    assert divide(2,2) == 1
+def test_clear_history():
+    Calculations.clear_history()
+    assert len(Calculations.history()) == 0, "History was not cleared"
 
-def test_divide_by_zero():
-    '''Test division by zero'''
-    try:
-        divide(2,0)
-    except ZeroDivisionError as e:
-        assert str(e) == "Cannot divide by zero!"
+def test_last_calculation():
+    latest = Calculations.last_calculation()
+    assert latest.a == Decimal('20') and latest.b == Decimal('3'), "Did not get the correct latest calculation"
