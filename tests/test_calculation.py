@@ -16,6 +16,18 @@ from calculator.operations import add, subtract, multiply, divide
     (Decimal('8.5'), Decimal('7.5'), subtract, Decimal('1.0')),
     (Decimal('1.5'), Decimal('2'), multiply, Decimal('3.0')),
     (Decimal('5'), Decimal('0.5'), divide, Decimal('10')),
+    (Decimal('-3'), Decimal('7'), add, Decimal('4')),
+    (Decimal('100'), Decimal('99'), subtract, Decimal('1')),
+    (Decimal('0.1'), Decimal('0.1'), multiply, Decimal('0.01')),
+    (Decimal('1'), Decimal('3'), divide, Decimal('0.3333333333333333333333333333')),
+    (Decimal('2.5'), Decimal('2.5'), add, Decimal('5.0')),
+    (Decimal('10000'), Decimal('0.0001'), multiply, Decimal('1')),
+    (Decimal('-5'), Decimal('-5'), subtract, Decimal('0')),
+    (Decimal('2'), Decimal('2'), multiply, Decimal('4')),
+    (Decimal('1'), Decimal('1'), divide, Decimal('1')),
+    (Decimal('0'), Decimal('5'), add, Decimal('5')),
+    (Decimal('0'), Decimal('0'), add, Decimal('0')),
+    (Decimal('-10'), Decimal('5'), multiply, Decimal('-50')),
 ])
 def test_ops(num1, num2, op, exp):
     """
