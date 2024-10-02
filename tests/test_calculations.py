@@ -25,4 +25,4 @@ def test_clear_history():
 
 def test_last_calculation():
     latest = Calculations.last_calculation()
-    assert latest.a == Decimal('20') and latest.b == Decimal('3'), "Did not get the correct latest calculation"
+    assert latest.num1 == Decimal('20') and latest.num2 == Decimal('3'), "Did not get the correct latest calculation"
