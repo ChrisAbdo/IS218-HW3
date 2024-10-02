@@ -8,14 +8,14 @@ from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
 
 @pytest.mark.parametrize("num1, num2, op, exp", [
-    (Decimal('10'), Decimal('5'), add, Decimal('15')),
-    (Decimal('10'), Decimal('5'), subtract, Decimal('5')),
-    (Decimal('10'), Decimal('5'), multiply, Decimal('50')),
-    (Decimal('10'), Decimal('2'), divide, Decimal('5')),
-    (Decimal('10.5'), Decimal('0.5'), add, Decimal('11.0')),
-    (Decimal('10.5'), Decimal('0.5'), subtract, Decimal('10.0')),
-    (Decimal('10.5'), Decimal('2'), multiply, Decimal('21.0')),
-    (Decimal('10'), Decimal('0.5'), divide, Decimal('20')),
+    (Decimal('7'), Decimal('2'), add, Decimal('9')),
+    (Decimal('9'), Decimal('4'), subtract, Decimal('5')),
+    (Decimal('12'), Decimal('3'), multiply, Decimal('36')),
+    (Decimal('18'), Decimal('6'), divide, Decimal('3')),
+    (Decimal('6.5'), Decimal('0.5'), add, Decimal('7.0')),
+    (Decimal('8.5'), Decimal('7.5'), subtract, Decimal('1.0')),
+    (Decimal('1.5'), Decimal('2'), multiply, Decimal('3.0')),
+    (Decimal('5'), Decimal('0.5'), divide, Decimal('10')),
 ])
 def test_ops(num1, num2, op, exp):
     """

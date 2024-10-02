@@ -14,8 +14,8 @@ def calculations():
     Create a history of calculations
     """
     Calculations.clear_history()
-    Calculations.add_calculation(Calculation(Decimal('10'), Decimal('5'), add))
-    Calculations.add_calculation(Calculation(Decimal('20'), Decimal('3'), subtract))
+    Calculations.add_calculation(Calculation(Decimal('7'), Decimal('2'), add))
+    Calculations.add_calculation(Calculation(Decimal('9'), Decimal('4'), subtract))
 
 def test_add_calculation():
     """
@@ -30,8 +30,8 @@ def test_history():
     Test that the history contains the expected number of calculations
     """
     Calculations.clear_history()
-    calc1 = Calculation(Decimal('10'), Decimal('5'), add)
-    calc2 = Calculation(Decimal('20'), Decimal('3'), subtract)
+    calc1 = Calculation(Decimal('6'), Decimal('5'), add)
+    calc2 = Calculation(Decimal('12'), Decimal('3'), subtract)
     Calculations.add_calculation(calc1)
     Calculations.add_calculation(calc2)
     history = Calculations.history()
@@ -49,8 +49,8 @@ def test_last_calculation():
     Test that the last calculation is returned
     """
     Calculations.clear_history()
-    Calculations.add_calculation(Calculation(Decimal('10'), Decimal('5'), add))
-    Calculations.add_calculation(Calculation(Decimal('20'), Decimal('3'), subtract))
+    Calculations.add_calculation(Calculation(Decimal('7'), Decimal('2'), add))
+    Calculations.add_calculation(Calculation(Decimal('9'), Decimal('4'), subtract))
     latest = Calculations.last_calculation()
     assert latest is not None, "No calculation found in history"
-    assert latest.num1 == Decimal('20') and latest.num2 == Decimal('3'), "Not correct"
+    assert latest.num1 == Decimal('9') and latest.num2 == Decimal('4'), "Not correct"
