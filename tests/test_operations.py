@@ -21,6 +21,6 @@ def test_op_divide():
     assert calculation.execute_calculation() == Decimal('2'), "Divide operation failed"
 
 def test_divide_by_zero():
-    with pytest.raises(ValueError, match="Cannot divide by zero"):
+    with pytest.raises(ZeroDivisionError, match="Cannot divide by zero"):
         calculation = Calculation(Decimal('10'), Decimal('0'), divide)
         calculation.execute_calculation()

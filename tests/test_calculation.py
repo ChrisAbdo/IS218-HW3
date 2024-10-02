@@ -19,5 +19,5 @@ def test_ops(num1, num2, op, exp):
 
 def test_divide_by_zero():
     calc = Calculation(Decimal('10'), Decimal('0'), divide)
-    with pytest.raises(ValueError, match="Cannot divide by zero"):  
+    with pytest.raises(ZeroDivisionError, match="Cannot divide by zero"):  
         calc.execute_calculation()  

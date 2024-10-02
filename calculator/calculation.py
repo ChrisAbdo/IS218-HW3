@@ -6,7 +6,8 @@ class Calculation:
         self.num1 = num1
         self.num2 = num2
         self.op = op
-       
+        self.result = self.execute_calculation()
+    
     @staticmethod
     def create_calculation(num1: Decimal, num2: Decimal, op: Callable[[Decimal, Decimal], Decimal]):
         return Calculation(num1, num2, op)
