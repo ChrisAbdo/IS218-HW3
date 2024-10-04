@@ -28,6 +28,21 @@ from calculator.operations import add, subtract, multiply, divide
     (Decimal('0'), Decimal('5'), add, Decimal('5')),
     (Decimal('0'), Decimal('0'), add, Decimal('0')),
     (Decimal('-10'), Decimal('5'), multiply, Decimal('-50')),
+    (Decimal('123.456'), Decimal('654.321'), add, Decimal('777.777')),
+    (Decimal('987.654'), Decimal('123.456'), subtract, Decimal('864.198')),
+    (Decimal('3.14159'), Decimal('2.71828'), multiply, Decimal('8.5397212652')),
+    (Decimal('1000'), Decimal('250'), divide, Decimal('4')),
+    (Decimal('-50'), Decimal('25'), add, Decimal('-25')),
+    (Decimal('0.333'), Decimal('0.667'), add, Decimal('1.0')),
+    (Decimal('100'), Decimal('0.1'), multiply, Decimal('10')),
+    (Decimal('1.234'), Decimal('0.4321'), subtract, Decimal('0.8019')),
+    (Decimal('9'), Decimal('3'), divide, Decimal('3')),
+    (Decimal('0.5'), Decimal('0.5'), multiply, Decimal('0.25')),
+    (Decimal('-100'), Decimal('-200'), add, Decimal('-300')),
+    (Decimal('50'), Decimal('50'), subtract, Decimal('0')),
+    (Decimal('0.01'), Decimal('0.01'), multiply, Decimal('0.0001')),
+    (Decimal('10'), Decimal('0.1'), divide, Decimal('100')),
+    (Decimal('12345'), Decimal('54321'), add, Decimal('66666')),
 ])
 def test_ops(num1, num2, op, exp):
     """
