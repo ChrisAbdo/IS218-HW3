@@ -6,7 +6,7 @@ from decimal import Decimal
 import pytest
 from calculator.calculation import Calculation
 from calculator.calculations import Calculations
-from calculator.operations import add, subtract
+from calculator.operations import add, subtract, divide
 
 @pytest.fixture
 def calculations():
@@ -32,10 +32,12 @@ def test_history():
     Calculations.clear_history()
     calc1 = Calculation(Decimal('6'), Decimal('5'), add)
     calc2 = Calculation(Decimal('12'), Decimal('3'), subtract)
+    calc3 = Calculation(Decimal('9'), Decimal('3'), divide)
     Calculations.add_calculation(calc1)
     Calculations.add_calculation(calc2)
+    Calculations.add_calculation(calc3)
     history = Calculations.history()
-    assert len(history) == 2, "History does not contain the expected number of calculations"
+    assert len(history) == 3, "History does not contain the expected number of calculations"
 
 def test_clear_history():
     """
