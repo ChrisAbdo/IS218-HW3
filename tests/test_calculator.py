@@ -18,15 +18,15 @@ def test_subtraction():
     """
     Test that the subtract method returns the expected result
     """
-    result = Calculator.subtract(Decimal(5), Decimal(3))
-    assert result == Decimal(2)
+    result = Calculator.subtract(Decimal(9), Decimal(3))
+    assert result == Decimal(6)
 
 def test_multiplication():
     """
     Test that the multiply method returns the expected result
     """
-    result = Calculator.multiply(Decimal(2), Decimal(3))
-    assert result == Decimal(6)
+    result = Calculator.multiply(Decimal(2), Decimal(4))
+    assert result == Decimal(8)
 
 def test_division():
     """
