@@ -10,7 +10,6 @@ class OperationCommand:
         self.b = b
 
     def execute(self):
-        # Retrieve the operation method from the Calculator class using getattr
         operation_method = getattr(self.calculator, self.operation_name, None)
         if operation_method:
             return operation_method(self.a, self.b)
